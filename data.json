@@ -1,0 +1,83 @@
+{ 
+    "chest":[
+        { "DumbBellPress":{
+            "goals": "Strength",
+            "weight": "Heavy",
+            "atHome": false
+            }
+        },
+
+        { "ChestFly":{
+            "goals": "Defintion",
+            "weight": "Medium",
+            "atHome": false
+            }
+        },
+       { "BarBellBenchPress":{
+            "goals": "Tone",
+            "weight": "Medium",
+            "atHome": false
+            }
+        },
+       { "Push-Ups":{
+            "goals": "Tone",
+            "weight": "Medium",
+            "atHome": true
+            }
+        },
+        {"DeclinePushUps":{
+            "goals": "Tone",
+            "weight": "Medium",
+            "atHome": true
+            }
+        },
+        {"Decline Push-Ups":{
+            "goals": "Tone",
+            "weight": "Medium",
+            "atHome": true
+            }
+        }
+    ],
+    
+    "cardio": [
+       { "running": {
+            "goals": "Improve cardio",
+            "weight": "none",
+            "atHome": true
+            }
+       },
+       { "jumpRope": {
+            "goals": "improve cardio",
+            "weight": "none",
+            "atHome": true
+            }
+       },
+        {"swimming": {
+            "goals": "Improve ardio",
+            "weight": "none",
+            "atHome": true
+            }
+        }
+    ],
+
+    "abs": [
+       {"situp": {
+            "goals": "tone",
+            "weight": "Body Weight",
+            "atHome": true
+            }
+        },
+        {"legRaise": {
+            "goals": "tone",
+            "weight": "Body Weight",
+            "atHome": true
+            }
+        },
+       { "crunch": {
+            "goals": "tone",
+            "weight": "Body Weight",
+            "atHome": true
+            }
+        }
+    ]
+}
