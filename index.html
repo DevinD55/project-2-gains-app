@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header class="wrapper">
+        <h1>Gains 4 Devs</h1>
+    </header>
+
+    <div class="formContainer wrapper">
+        <form action="#" method="post" name="workoutForm">
+            <fieldset>
+                <h2>Choose your workout!</h2>
+                <input type="checkbox" id="chestWorkouts" name="chestWorkouts" checked>
+                <label for="chestWorkouts" class="checkBox">Chest</label>
+
+                <input type="checkbox" id="legWorkouts" name="legWorkouts" checked>
+                <label for="legWorkouts" class="checkBox">Leg</label>
+
+                <input type="checkbox" id="abWorkouts" name="abWorkouts" checked>
+                <label for="abWorkouts" class="checkBox">Ab</label>
+
+                <input type="checkbox" id="cardioWorkouts" name="cardioWorkouts" checked>
+                <label for="cardioWorkouts" class="checkBox">Cardio</label>
+            </fieldset>
+            <fieldset>
+                <input type="number" id="numOfWorkouts" name="numOfWorkouts" placeholder="Enter number of workouts" required>
+                <label for="numOfWorkouts" class="sr-only">Choose Number of Workouts</label>
+            </fieldset>
+            <button type="submit">Get Workouts</button>
+            <!-- Form with two inputs... #1 is checkboxes for 4 main muscle groups... #2 is an input field that takes a number for numOfWorkouts. Both should have labels with an sr-only class -->
+            
+        </form>
+    </div>
+    <div class="workoutReturn">
+        <ul>
+            
+        </ul>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
