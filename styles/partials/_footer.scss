@@ -1,0 +1,16 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+footer{
+    height: 50px;
+    background-color: $secondaryBgColor;
+    color: $baseFontColor;
+    font-family: $baseFont;
+    font-size: .8rem;
+    .wrapper{
+        height: 100%;
+        display: flex;
+        justify-content:center ;
+        align-items:center ;
+    }
+}

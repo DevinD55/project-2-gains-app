@@ -1,0 +1,22 @@
+@use "./variables" as *;
+@use "./typography";
+
+header {
+    background-color: $bgColor;
+    height: 50vh;
+    .wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        font-size: 3em;
+    }
+    span{
+        color: $accent;
+        font-family: $secondaryFont;
+        font-size: .5em;
+    }
+    
+}
