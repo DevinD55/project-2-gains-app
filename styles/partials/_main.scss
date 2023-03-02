@@ -1,0 +1,42 @@
+@use "./variables"as *;
+main{
+    height: 50vh;
+    background-color: $bgColor;
+    color: $baseFontColor;
+    font-family: $baseFont;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+fieldset{
+    border:none;
+    text-align: center;
+    width: 100%;
+    gap:20px;
+    h2{
+        margin-bottom: 20px;
+    } 
+    checkbox{
+        border: 2px solid $accent;
+    }
+}
+button{
+    background-color: $bgColor;
+    border: 2px solid $accent;
+    color: $baseFontColor;
+    padding:5px 20px;
+    &:hover{
+   
+        transition: .5s;
+        transform: scale(1.15);
+    }
+}
+#numOfWorkouts{
+    width: 32%;
+}
+
+
