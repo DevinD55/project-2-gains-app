@@ -22,40 +22,41 @@
             <form action="#" method="post" name="workoutForm">
                 <fieldset>
                     <h2>Build your workout!</h2>
-                    <input type="checkbox" id="chestWorkouts" name="chestWorkouts" checked>
+                    <input type="checkbox" id="chestWorkouts" name="workouts">
                     <label for="chestWorkouts" class="checkBox">Chest</label>
 
-                    <input type="checkbox" id="legWorkouts" name="legWorkouts" checked>
+                    <input type="checkbox" id="legWorkouts" name="workouts">
                     <label for="legWorkouts" class="checkBox">Leg</label>
 
-                    <input type="checkbox" id="abWorkouts" name="abWorkouts" checked>
+                    <input type="checkbox" id="abWorkouts" name="workouts">
                     <label for="abWorkouts" class="checkBox">Ab</label>
 
-                    <input type="checkbox" id="cardioWorkouts" name="cardioWorkouts" checked>
+                    <input type="checkbox" id="cardioWorkouts" name="workouts">
                     <label for="cardioWorkouts" class="checkBox">Cardio</label>
                 </fieldset>
                 <fieldset>
                     <input type="number" id="numOfWorkouts" name="numOfWorkouts" min="1" max="10"placeholder="Enter number of workouts"  required>
                     <label for="numOfWorkouts" class="sr-only">Choose Number of Workouts</label>
                 </fieldset>
-                <button type="submit">Get Workouts</button>
+                <button type="submit" id="btn">Get Workouts</button>
                 <!-- Form with two inputs... #1 is checkboxes for 4 main muscle groups... #2 is an input field that takes a number for numOfWorkouts. Both should have labels with an sr-only class -->
                 
             </form>
         </div>
         <div class="workoutReturn">
-            <ul>
+            <ul id="workoutReturn">
                 
             </ul>
         </div>
 
 
-        <script src="app.js"></script>
     </main>
     <footer>
         <div class="wrapper">
             <h3>Copyright Amir & Devin 2023</h3>
         </div>
     </footer>
+
+    <script type="module" src="./scripts/app.js"></script>
 </body>
 </html>
