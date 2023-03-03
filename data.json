@@ -13,13 +13,13 @@
             "atHome": false
             }
         },
-       { "BarBellBenchPress":{
+        { "BarBellBenchPress":{
             "goals": "Tone",
             "weight": "Medium",
             "atHome": false
             }
         },
-       { "Push-Ups":{
+        { "Push-Ups":{
             "goals": "Tone",
             "weight": "Medium",
             "atHome": true
@@ -40,18 +40,18 @@
     ],
     
     "cardio": [
-       { "running": {
+        { "running": {
             "goals": "Improve cardio",
             "weight": "none",
             "atHome": true
             }
-       },
-       { "jumpRope": {
+        },
+        { "jumpRope": {
             "goals": "improve cardio",
             "weight": "none",
             "atHome": true
             }
-       },
+        },
         {"swimming": {
             "goals": "Improve ardio",
             "weight": "none",
@@ -61,7 +61,7 @@
     ],
 
     "abs": [
-       {"situp": {
+        {"situp": {
             "goals": "tone",
             "weight": "Body Weight",
             "atHome": true
@@ -73,7 +73,7 @@
             "atHome": true
             }
         },
-       { "crunch": {
+        { "crunch": {
             "goals": "tone",
             "weight": "Body Weight",
             "atHome": true

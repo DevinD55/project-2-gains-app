@@ -19,6 +19,7 @@ function clearWorkout() {
     userWorkout = [];
 } 
 
+
 submitButton.addEventListener('click', function(event){
     console.log(event);
     console.log('submit!');
@@ -62,7 +63,9 @@ submitButton.addEventListener('click', function(event){
         get(chestRef).then(function(snapshot) {
             if(snapshot.exists()){
                 const chestArray = (snapshot.val());
-                (userWorkout.push(chestArray));
+                for (let i = 0; i < chestArray.length; i++) {
+                    (userWorkout.push(chestArray[i]));
+                }
             }
         })
     }
@@ -71,16 +74,21 @@ submitButton.addEventListener('click', function(event){
         get(absRef).then(function(snapshot) {
             if(snapshot.exists()){
                 const absArray = (snapshot.val());
-                (userWorkout.push(absArray));
+                for (let i = 0; i < absArray.length; i++) {
+                        (userWorkout.push(absArray[i]));
+                    }
+                }
             }
-        })
-    }
+    )   }
+
 
     if (cardioCheckbox.checked) {
         get(cardioRef).then(function(snapshot) {
             if(snapshot.exists()){
                 const cardioArray = (snapshot.val());
-                (userWorkout.push(cardioArray));
+                for (let i = 0; i < cardioArray.length; i++) {
+                    (userWorkout.push(cardioArray[i]));
+                }
             }
         })
     }
@@ -91,26 +99,11 @@ submitButton.addEventListener('click', function(event){
     console.log(numOfWorkouts.value);
 
 
-    // function randomizeWorkout(userWorkout, numWorkouts) {
-    //     const shuffledArray = userWorkout.sort(() => Math.floor(Math.random() * userWorkout.length));
-    //     return shuffledArray.slice(0, numOfWorkouts)
-    // };
-    // randomizeWorkout();
-
-    // numOfWorkouts.value will give us the number.
-
-    // function randomItem(userWorkout, numWorkouts){
-
-    //     const shuffledArray= userWorkout.sort (() => Math.floor(Math.random() * userWorkout.length))
-    //     return shuffledArray.slice(0,numWorkouts)
-    // };
-    // randomItem();
-    
-    // const workout = randomItem(workoutType, numOfWorkouts.value);
-    // console.log(workout)
-
     console.log(userWorkout);
+
     })
+
+
 
 
     
