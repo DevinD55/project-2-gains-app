@@ -11,15 +11,19 @@ const absRef = ref(database, "/abs");
 
 const workoutUl = document.getElementById("workoutReturn");
 
-const workoutList = '[]';
-
 const submitButton = document.querySelector('button');
 
+let userWorkout = [];
+
+function clearWorkout() {
+    userWorkout = [];
+} 
 
 submitButton.addEventListener('click', function(event){
     console.log(event);
     console.log('submit!');
     event.preventDefault();
+    clearWorkout();
 
     // Checking if checkbox is checked
     const chestCheckbox = document.getElementById('chestWorkouts');
@@ -30,37 +34,74 @@ submitButton.addEventListener('click', function(event){
     console.log(workoutType);
 
     // Referencing database and publishing workout arrays
-    get(chestRef).then(function(snapshot) {
-        if(snapshot.exists()){
-            console.log(snapshot.val());
-        }
-    })
+    
+    // get(chestRef).then(function(snapshot) {
+    //     if(snapshot.exists()){
+    //         const chestArray = (snapshot.val());
+    //         console.log(chestArray)
+    //     }
+    // })
 
-    get(cardioRef).then(function(snapshot) {
-        if(snapshot.exists()){
-            console.log(snapshot.val());
-        }
-    })
+    // get(cardioRef).then(function(snapshot) {
+    //     if(snapshot.exists()){
+    //         const cardioArray = (snapshot.val());
+    //         console.log(cardioArray);
+    //     }
+    // })
 
-    get(absRef).then(function(snapshot) {
-        if(snapshot.exists()){
-            console.log(snapshot.val());
-        }
-    })
+    // get(absRef).then(function(snapshot) {
+    //     if(snapshot.exists()){
+    //         const abArray = (snapshot.val());
+    //         console.log(abArray);
+    //     }
+    // })
 
     // We need something that will check what checkboxes are checked, and if they are will push the workout arrays into our empty WorkoutList array.
 
-    
+    if (chestCheckbox.checked) {
+        get(chestRef).then(function(snapshot) {
+            if(snapshot.exists()){
+                const chestArray = (snapshot.val());
+                (userWorkout.push(chestArray));
+            }
+        })
+    }
+
+    if (absCheckbox.checked) {
+        get(absRef).then(function(snapshot) {
+            if(snapshot.exists()){
+                const absArray = (snapshot.val());
+                (userWorkout.push(absArray));
+            }
+        })
+    }
+
+    if (cardioCheckbox.checked) {
+        get(cardioRef).then(function(snapshot) {
+            if(snapshot.exists()){
+                const cardioArray = (snapshot.val());
+                (userWorkout.push(cardioArray));
+            }
+        })
+    }
+
 
     // Now we can read what types of workouts were submitted. Now we need it to log the input workout number. Check out submit is tracking the right number.
     const numOfWorkouts = document.querySelector('input[name=numOfWorkouts]');
     console.log(numOfWorkouts.value);
+
+
+    // function randomizeWorkout(userWorkout, numWorkouts) {
+    //     const shuffledArray = userWorkout.sort(() => Math.floor(Math.random() * userWorkout.length));
+    //     return shuffledArray.slice(0, numOfWorkouts)
+    // };
+    // randomizeWorkout();
+
     // numOfWorkouts.value will give us the number.
 
+    // function randomItem(userWorkout, numWorkouts){
 
-    // function randomItem(anyArray, numWorkouts){
-
-    //     const shuffledArray= anyArray.sort (() => Math.floor(Math.random() * anyArray.length))
+    //     const shuffledArray= userWorkout.sort (() => Math.floor(Math.random() * userWorkout.length))
     //     return shuffledArray.slice(0,numWorkouts)
     // };
     // randomItem();
@@ -68,4 +109,8 @@ submitButton.addEventListener('click', function(event){
     // const workout = randomItem(workoutType, numOfWorkouts.value);
     // console.log(workout)
 
+    console.log(userWorkout);
     })
+
+
+    
