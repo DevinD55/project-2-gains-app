@@ -11,15 +11,22 @@ const absRef = ref(database, "/abs");
 
 const workoutUl = document.getElementById("workoutReturn");
 
-const workoutList = '[]';
-
 const submitButton = document.querySelector('button');
+
+let userWorkout = [];
+
+function clearWorkout() {
+    userWorkout = [];
+} 
+
 
 
 submitButton.addEventListener('click', function(event){
+   
     console.log(event);
     console.log('submit!');
     event.preventDefault();
+    clearWorkout();
 
     // Checking if checkbox is checked
     const chestCheckbox = document.getElementById('chestWorkouts');
@@ -29,43 +36,60 @@ submitButton.addEventListener('click', function(event){
     const workoutType = document.querySelectorAll('input[name=workouts]:checked');
     console.log(workoutType);
 
-    // Referencing database and publishing workout arrays
-    get(chestRef).then(function(snapshot) {
-        if(snapshot.exists()){
-            console.log(snapshot.val());
-        }
-    })
-
-    get(cardioRef).then(function(snapshot) {
-        if(snapshot.exists()){
-            console.log(snapshot.val());
-        }
-    })
-
-    get(absRef).then(function(snapshot) {
-        if(snapshot.exists()){
-            console.log(snapshot.val());
-        }
-    })
-
-    // We need something that will check what checkboxes are checked, and if they are will push the workout arrays into our empty WorkoutList array.
-
-    
-
-    // Now we can read what types of workouts were submitted. Now we need it to log the input workout number. Check out submit is tracking the right number.
     const numOfWorkouts = document.querySelector('input[name=numOfWorkouts]');
-    console.log(numOfWorkouts.value);
-    // numOfWorkouts.value will give us the number.
 
 
-    // function randomItem(anyArray, numWorkouts){
+    // Fisher Yates Shuffling fuinction
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      
+      // Calling the shuffle function after the userWorkout array is populated
+      if (chestCheckbox.checked) {
+        get(chestRef).then(function(snapshot) {
+          if (snapshot.exists()) {
+            const chestArray = snapshot.val();
+            for (let i = 0; i < chestArray.length; i++) {
+              userWorkout.push(chestArray[i]);
+            }
+            shuffle(userWorkout); // Shufflling the array
+          }
+        });
+      }
+      
+      if (absCheckbox.checked) {
+        get(absRef).then(function(snapshot) {
+          if (snapshot.exists()) {
+            const absArray = snapshot.val();
+            for (let i = 0; i < absArray.length; i++) {
+              userWorkout.push(absArray[i]);
+            }
+            shuffle(userWorkout); // Shuffling the array
+          }
+        });
+      }
+      
+      if (cardioCheckbox.checked) {
+        get(cardioRef).then(function(snapshot) {
+          if (snapshot.exists()) {
+            const cardioArray = snapshot.val();
+            for (let i = 0; i < cardioArray.length; i++) {
+              userWorkout.push(cardioArray[i]);
+            }
+            shuffle(userWorkout); // Shuffling the array
+          }
+        });
+      }
 
-    //     const shuffledArray= anyArray.sort (() => Math.floor(Math.random() * anyArray.length))
-    //     return shuffledArray.slice(0,numWorkouts)
-    // };
-    // randomItem();
-    
-    // const workout = randomItem(workoutType, numOfWorkouts.value);
-    // console.log(workout)
-
+console.log(userWorkout)
     })
+
+
+
+
+
+
+    
