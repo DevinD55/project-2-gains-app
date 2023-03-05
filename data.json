@@ -1,35 +1,35 @@
 { 
     "chest":[
-        { "DumbBellPress":{
+        {
+            "name": "Dumbbell Press",
             "goals": "Strength",
             "weight": "Heavy",
             "atHome": false
-            }
         },
 
-        { "ChestFly":{
+        {
+            "name": "ChestFly",
             "goals": "Defintion",
             "weight": "Medium",
             "atHome": false
-            }
         },
-        { "BarBellBenchPress":{
+        {
+            "name": "Barbell Bench Press",
             "goals": "Tone",
             "weight": "Medium",
             "atHome": false
-            }
         },
-        { "Push-Ups":{
+        {
+            "name": "Push Ups",
             "goals": "Tone",
             "weight": "Medium",
             "atHome": true
-            }
         },
-        {"DeclinePushUps":{
+        {
+            "name": "Decline Push Up",
             "goals": "Tone",
             "weight": "Medium",
             "atHome": true
-            }
         },
         {"Decline Push-Ups":{
             "goals": "Tone",
@@ -61,7 +61,7 @@
     ],
 
     "abs": [
-        {"situp": {
+       {"situp": {
             "goals": "tone",
             "weight": "Body Weight",
             "atHome": true
@@ -73,7 +73,7 @@
             "atHome": true
             }
         },
-        { "crunch": {
+       { "crunch": {
             "goals": "tone",
             "weight": "Body Weight",
             "atHome": true

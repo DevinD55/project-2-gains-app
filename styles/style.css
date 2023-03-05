@@ -244,10 +244,10 @@ html {
 
 header {
   background-color: #8F1C1C;
-  height: 50vh;
+  height: 25vh;
 }
 header .wrapper {
-  height: 100%;
+  padding: 10% 0 25% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -268,7 +268,7 @@ header span {
 }
 
 main {
-  height: 50vh;
+  min-height: 75vh;
   background-color: #8F1C1C;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -288,7 +288,7 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-bottom: 20px;
+  padding: 5% 0;
 }
 
 fieldset {
@@ -339,4 +339,30 @@ footer .wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.workoutReturn {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+}
+.workoutReturn .workoutCard {
+  width: 150px;
+  padding: 2%;
+  text-align: center;
 }

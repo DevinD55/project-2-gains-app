@@ -1,0 +1,16 @@
+.workoutReturn {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+
+    .workoutCard {
+        width: 150px;
+        padding: 2%;
+        text-align: center;
+    }
+}

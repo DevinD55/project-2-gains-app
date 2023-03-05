@@ -34,28 +34,6 @@ submitButton.addEventListener('click', function(event){
     const workoutType = document.querySelectorAll('input[name=workouts]:checked');
     console.log(workoutType);
 
-    // Referencing database and publishing workout arrays
-    
-    // get(chestRef).then(function(snapshot) {
-    //     if(snapshot.exists()){
-    //         const chestArray = (snapshot.val());
-    //         console.log(chestArray)
-    //     }
-    // })
-
-    // get(cardioRef).then(function(snapshot) {
-    //     if(snapshot.exists()){
-    //         const cardioArray = (snapshot.val());
-    //         console.log(cardioArray);
-    //     }
-    // })
-
-    // get(absRef).then(function(snapshot) {
-    //     if(snapshot.exists()){
-    //         const abArray = (snapshot.val());
-    //         console.log(abArray);
-    //     }
-    // })
 
     // We need something that will check what checkboxes are checked, and if they are will push the workout arrays into our empty WorkoutList array.
 
@@ -65,6 +43,16 @@ submitButton.addEventListener('click', function(event){
                 const chestArray = (snapshot.val());
                 for (let i = 0; i < chestArray.length; i++) {
                     (userWorkout.push(chestArray[i]));
+                    // below will push to the ul
+                    userWorkout.forEach(function(individualWorkout){
+                        console.log(individualWorkout);
+                        const newListItem = document.createElement('li');
+                        newListItem.classList.add('workoutCard')
+                        newListItem.innerHTML = `
+                        <h2>${individualWorkout.name}</h2>
+                        `;
+                        workoutUl.appendChild(newListItem);
+                    });
                 }
             }
         })
@@ -88,6 +76,7 @@ submitButton.addEventListener('click', function(event){
                 const cardioArray = (snapshot.val());
                 for (let i = 0; i < cardioArray.length; i++) {
                     (userWorkout.push(cardioArray[i]));
+
                 }
             }
         })
@@ -100,6 +89,10 @@ submitButton.addEventListener('click', function(event){
 
 
     console.log(userWorkout);
+
+    
+
+    
 
     })
 
