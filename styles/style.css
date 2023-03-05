@@ -268,7 +268,7 @@ header span {
 }
 
 main {
-  height: 50vh;
+  min-height: 50vh;
   background-color: #8F1C1C;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -318,7 +318,8 @@ button:hover {
 }
 
 #numOfWorkouts {
-  width: 32%;
+  width: 50%;
+  height: 2rem;
 }
 
 footer {
@@ -339,4 +340,46 @@ footer .wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.workoutReturn {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+}
+.workoutReturn .workoutCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  margin: 2%;
+  text-align: center;
+  background-color: white;
+}
+.workoutReturn .workoutCard h2 {
+  color: #8F1C1C;
 }
