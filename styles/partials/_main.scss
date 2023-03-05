@@ -1,7 +1,7 @@
 @use "./variables" as *;
 
 main{
-    height: 50vh;
+    min-height: 50vh;
     background-color: $bgColor;
     color: $baseFontColor;
     font-family: $baseFont;
@@ -37,7 +37,8 @@ button{
     }
 }
 #numOfWorkouts{
-    width: 32%;
+    width: 50%;
+    height: 2rem;
 }
 
 

@@ -8,6 +8,8 @@ const dbRef = ref(database);
 const chestRef = ref(database, "/chest");
 const cardioRef = ref(database, "/cardio");
 const absRef = ref(database, "/abs");
+const legsRef = ref(database, "/legs");
+
 
 const workoutUl = document.getElementById("workoutReturn");
 
@@ -19,98 +21,111 @@ function clearWorkout() {
     userWorkout = [];
 } 
 
+function clearReturn(){
+    workoutUl.innerHTML = "";
+}
+
+
 submitButton.addEventListener('click', function(event){
+    
     console.log(event);
     console.log('submit!');
     event.preventDefault();
     clearWorkout();
+    clearReturn();
 
     // Checking if checkbox is checked
     const chestCheckbox = document.getElementById('chestWorkouts');
     const cardioCheckbox = document.getElementById('cardioWorkouts');
     const absCheckbox = document.getElementById('abWorkouts');
+    const legsCheckbox = document.getElementById('legWorkouts');
 
     const workoutType = document.querySelectorAll('input[name=workouts]:checked');
     console.log(workoutType);
 
-    // Referencing database and publishing workout arrays
-    
-    // get(chestRef).then(function(snapshot) {
-    //     if(snapshot.exists()){
-    //         const chestArray = (snapshot.val());
-    //         console.log(chestArray)
-    //     }
-    // })
-
-    // get(cardioRef).then(function(snapshot) {
-    //     if(snapshot.exists()){
-    //         const cardioArray = (snapshot.val());
-    //         console.log(cardioArray);
-    //     }
-    // })
-
-    // get(absRef).then(function(snapshot) {
-    //     if(snapshot.exists()){
-    //         const abArray = (snapshot.val());
-    //         console.log(abArray);
-    //     }
-    // })
-
-    // We need something that will check what checkboxes are checked, and if they are will push the workout arrays into our empty WorkoutList array.
-
-    if (chestCheckbox.checked) {
-        get(chestRef).then(function(snapshot) {
-            if(snapshot.exists()){
-                const chestArray = (snapshot.val());
-                (userWorkout.push(chestArray));
-            }
-        })
-    }
-
-    if (absCheckbox.checked) {
-        get(absRef).then(function(snapshot) {
-            if(snapshot.exists()){
-                const absArray = (snapshot.val());
-                (userWorkout.push(absArray));
-            }
-        })
-    }
-
-    if (cardioCheckbox.checked) {
-        get(cardioRef).then(function(snapshot) {
-            if(snapshot.exists()){
-                const cardioArray = (snapshot.val());
-                (userWorkout.push(cardioArray));
-            }
-        })
-    }
-
-
-    // Now we can read what types of workouts were submitted. Now we need it to log the input workout number. Check out submit is tracking the right number.
     const numOfWorkouts = document.querySelector('input[name=numOfWorkouts]');
-    console.log(numOfWorkouts.value);
+    const numWorkoutValue = numOfWorkouts.valueAsNumber;
 
+    // Fisher Yates Shuffling fuinction
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
 
-    // function randomizeWorkout(userWorkout, numWorkouts) {
-    //     const shuffledArray = userWorkout.sort(() => Math.floor(Math.random() * userWorkout.length));
-    //     return shuffledArray.slice(0, numOfWorkouts)
-    // };
-    // randomizeWorkout();
+    function printWorkout(){
+        for (let i = 0; i < numWorkoutValue; i++) {
+                const individualWorkout = userWorkout[i];
+                //console.log(individualWorkout);
+                const newListItem = document.createElement('li');
+                newListItem.classList.add('workoutCard');
+                newListItem.innerHTML = `
+                <h2>${individualWorkout.name}</h2>
+                `;
+                workoutUl.appendChild(newListItem);
+        }
+    }
+      
+      // Calling the shuffle function after the userWorkout array is populated
+      if (chestCheckbox.checked) {
+        get(chestRef).then(function(snapshot) {
+          if (snapshot.exists()) {
+            const chestArray = snapshot.val();
+            for (let i = 0; i < chestArray.length; i++) {
+              userWorkout.push(chestArray[i]);
+            }
+            shuffle(userWorkout); // Shufflling the array
+          }
+          printWorkout();
+        });
+      }
 
-    // numOfWorkouts.value will give us the number.
+      if (legsCheckbox.checked) {
+        get(legsRef).then(function(snapshot) {
+          if (snapshot.exists()) {
+            const legsArray = snapshot.val();
+            for (let i = 0; i < legsArray.length; i++) {
+              userWorkout.push(legsArray[i]);
+            }
+            shuffle(userWorkout); // Shufflling the array
+          }
+          printWorkout();
+        });
+      }
+      
+      if (absCheckbox.checked) {
+        get(absRef).then(function(snapshot) {
+          if (snapshot.exists()) {
+            const absArray = snapshot.val();
+            for (let i = 0; i < absArray.length; i++) {
+              userWorkout.push(absArray[i]);
+            }
+            shuffle(userWorkout); // Shuffling the array
+          }
+          printWorkout();
+        });
+      }
+      
+      if (cardioCheckbox.checked) {
+        get(cardioRef).then(function(snapshot) {
+          if (snapshot.exists()) {
+            const cardioArray = snapshot.val();
+            for (let i = 0; i < cardioArray.length; i++) {
+              userWorkout.push(cardioArray[i]);
+            }
+            shuffle(userWorkout); // Shuffling the array
+          }
+          printWorkout();
+        });
+      }
+
+console.log(userWorkout)
 
     // function randomItem(userWorkout, numWorkouts){
 
-    //     const shuffledArray= userWorkout.sort (() => Math.floor(Math.random() * userWorkout.length))
-    //     return shuffledArray.slice(0,numWorkouts)
-    // };
-    // randomItem();
-    
-    // const workout = randomItem(workoutType, numOfWorkouts.value);
-    // console.log(workout)
 
-    console.log(userWorkout);
-    })
+});
 
 
     
