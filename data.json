@@ -6,9 +6,8 @@
             "weight": "Heavy",
             "atHome": false
         },
-
         {
-            "name": "ChestFly",
+            "name": "Chest Fly",
             "goals": "Defintion",
             "weight": "Medium",
             "atHome": false
@@ -20,64 +19,83 @@
             "atHome": false
         },
         {
-            "name": "Push Ups",
+            "name": "Pushups",
             "goals": "Tone",
             "weight": "Medium",
             "atHome": true
         },
         {
-            "name": "Decline Push Up",
+            "name": "Decline Pushups",
             "goals": "Tone",
             "weight": "Medium",
             "atHome": true
-        },
-        {"Decline Push-Ups":{
-            "goals": "Tone",
-            "weight": "Medium",
-            "atHome": true
-            }
         }
     ],
-    
+    "legs":[
+        {
+            "name": "Squats",
+            "goals": "Strength",
+            "weight": "Heavy",
+            "atHome": false
+        },
+        {
+            "name": "Leg Curl",
+            "goals": "Strength",
+            "weight": "Medium",
+            "atHome": false
+        },
+        {
+            "name": "Lunge",
+            "goals": "tone",
+            "weight": "none",
+            "atHome": true
+        },
+        {
+            "name": "Leg Press",
+            "goals": "Strength",
+            "weight": "Medium",
+            "atHome": false
+        }
+    ],
     "cardio": [
-        { "running": {
+        { 
+            "name": "Running",
             "goals": "Improve cardio",
             "weight": "none",
             "atHome": true
-            }
         },
-        { "jumpRope": {
+        {
+            "name": "Jump Rope",
             "goals": "improve cardio",
             "weight": "none",
             "atHome": true
-            }
-        },
-        {"swimming": {
+       },
+        {
+            "name": "Swimming",
             "goals": "Improve ardio",
             "weight": "none",
             "atHome": true
-            }
         }
     ],
 
     "abs": [
-       {"situp": {
+       {
+            "name": "Situp",
             "goals": "tone",
             "weight": "Body Weight",
             "atHome": true
-            }
         },
-        {"legRaise": {
+        {
+            "name": "Leg Raise",
             "goals": "tone",
             "weight": "Body Weight",
             "atHome": true
-            }
         },
-       { "crunch": {
+       {
+            "name": "Crunch",
             "goals": "tone",
             "weight": "Body Weight",
             "atHome": true
-            }
-        }
+       }
     ]
 }
