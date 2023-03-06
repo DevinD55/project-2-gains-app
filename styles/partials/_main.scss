@@ -39,6 +39,11 @@ button{
 #numOfWorkouts{
     width: 50%;
     height: 2rem;
+    font-size: .9rem;
+    text-align: center;
 }
 
+input[type=number]{
+    border:2px solid $bgColor;
+}
 
