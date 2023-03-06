@@ -21,8 +21,22 @@
         text-align: center;
         background-color: white;
 
+        
+            
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+          
+
         h2 {
             color: $bgColor;
         }
     }
+    .flip-card {
+        transform: rotateY(180deg);
+        background-color: #004D28;
+        color: white;
+        transform: rotateY(180deg);
+
+      }
 }
