@@ -10,12 +10,14 @@
             "name": "Chest Fly",
             "goals": "Defintion",
             "weight": "Medium",
+            "backgroundImage": "assets/chest-fly.jpg",
             "atHome": false
         },
         {
             "name": "Barbell Bench Press",
             "goals": "Tone",
             "weight": "Medium",
+            "backgroundImage": "assets/bench-press.jpg",
             "atHome": false
         },
         {

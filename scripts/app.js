@@ -62,7 +62,9 @@ submitButton.addEventListener('click', function(event){
                 newListItem.classList.add('workoutCard');
                 newListItem.innerHTML = `
                 <h2>${individualWorkout.name}</h2>
-                `;
+                <div class="workout-img" style="background-image: url(${individualWorkout.image})">
+                
+                </div>`;
                 workoutUl.appendChild(newListItem);
         }
     }
@@ -120,12 +122,17 @@ submitButton.addEventListener('click', function(event){
         });
       }
 
-console.log(userWorkout)
-
-    // function randomItem(userWorkout, numWorkouts){
 
 
-});
+workoutUl.addEventListener('click', function(event){
+console.log(event.target)
+  if (event.target.tagName === 'li') {
+// Toggle a CSS class to show or hide additional content
+event.target.classList.toggle('flip-card');
+
+}
+
+})
 
 
-    
+})

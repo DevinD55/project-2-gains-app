@@ -14,15 +14,35 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 150px;
-        height: 150px;
+        align-items: space-between;
+        width: 200px;
+        height: 250px;
         border-radius: 5px;
         margin: 2%;
         text-align: center;
         background-color: white;
 
+
         h2 {
             color: $bgColor;
+            position: relative;
+
         }
-    }
+
+        .workout-img {
+
+            width: 175px;
+            height: 100px;
+            background-size: contain;
+            background-position: center;
+
+}
+
+
+
+.flip-card {
+    transform: rotateY(180deg);
+    background-color: #004D28;
+    color: white;
+    transform: rotateY(180deg);
 }
