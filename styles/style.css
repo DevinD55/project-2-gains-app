@@ -320,6 +320,12 @@ button:hover {
 #numOfWorkouts {
   width: 50%;
   height: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+input[type=number] {
+  border: 2px solid #8F1C1C;
 }
 
 footer {
@@ -382,17 +388,26 @@ footer .wrapper {
   margin: 2%;
   text-align: center;
   background-color: white;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 .workoutReturn .workoutCard h2 {
   color: #8F1C1C;
   position: relative;
 }
-.workoutReturn .workoutCard .workout-img {
-  width: 175px;
-  height: 100px;
+.workoutReturn .flip-card {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-color: #004D28;
+  color: white;
+  transform: rotateY(180deg);
 }
-
-.flip-card {
+.workoutReturn .flip-card {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   background-color: #004D28;

@@ -23,26 +23,24 @@
         background-color: white;
 
 
+        
+            
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        
+
         h2 {
             color: $bgColor;
             position: relative;
 
         }
+    }
+    .flip-card {
+        transform: rotateY(180deg);
+        background-color: #004D28;
+        color: white;
+        transform: rotateY(180deg);
 
-        .workout-img {
-
-            width: 175px;
-            height: 100px;
-            background-size: contain;
-            background-position: center;
-
-}
-
-
-
-.flip-card {
-    transform: rotateY(180deg);
-    background-color: #004D28;
-    color: white;
-    transform: rotateY(180deg);
+      }
 }
