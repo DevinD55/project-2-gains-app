@@ -1,11 +1,22 @@
 @use "./variables" as *;
 
 main{
-    min-height: 50vh;
     background-color: $bgColor;
     color: $baseFontColor;
     font-family: $baseFont;
+    min-height: 75vh;
 }
+.appDescription{
+    text-align: center;
+    h3{
+        padding: 20px 0;
+    }
+    li{
+        padding: 5px 0;
+        font-weight: lighter;
+    }
+}
+
 form{
     display: flex;
     justify-content: center;
@@ -17,7 +28,7 @@ fieldset{
     border:none;
     text-align: center;
     width: 100%;
-    gap:20px;
+    gap: 20px;
     h2{
         margin-bottom: 20px;
     } 
@@ -31,7 +42,6 @@ button{
     color: $baseFontColor;
     padding:5px 20px;
     &:hover{
-   
         transition: .5s;
         transform: scale(1.15);
     }

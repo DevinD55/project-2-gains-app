@@ -4,8 +4,17 @@ h1, h2, h3, p {
   color: white;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
   font-family: "Montserrat", sans-serif;
+}
+
+h3 {
+  font-weight: lighter;
+}
+
+h4 {
+  color: #004D28;
+  padding-top: 5px;
 }
 
 html {
@@ -236,18 +245,27 @@ html {
   overflow: hidden;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   width: 1200px;
   max-width: 85%;
   margin: 0 auto;
 }
 
+.copyWrapper {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
 header {
   background-color: #8F1C1C;
-  height: 44vh;
+  height: 20vh;
 }
 header .wrapper {
-  padding: 10% 0 25% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,6 +278,7 @@ header .wrapper {
 }
 header h1 {
   font-size: 3em;
+  padding-top: 30px;
 }
 header span {
   color: #00FF84;
@@ -268,10 +287,21 @@ header span {
 }
 
 main {
-  min-height: 50vh;
   background-color: #8F1C1C;
   color: white;
   font-family: "Montserrat", sans-serif;
+  min-height: 75vh;
+}
+
+.appDescription {
+  text-align: center;
+}
+.appDescription h3 {
+  padding: 20px 0;
+}
+.appDescription li {
+  padding: 5px 0;
+  font-weight: lighter;
 }
 
 form {
@@ -329,11 +359,14 @@ input[type=number] {
 }
 
 footer {
-  height: 50px;
+  height: 5vh;
   background-color: #004D28;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
 }
 footer .wrapper {
   height: 100%;
@@ -347,10 +380,11 @@ footer .wrapper {
       -ms-flex-align: center;
           align-items: center;
 }
+footer .wrapper h3 a {
+  color: white;
+}
 
 .workoutReturn {
-  margin: 0;
-  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -400,12 +434,12 @@ footer .wrapper {
   color: #8F1C1C;
   position: relative;
 }
-.workoutReturn .flip-card {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  background-color: #004D28;
-  color: white;
-  transform: rotateY(180deg);
+.workoutReturn .workoutCard img {
+  width: 100px;
+  max-height: 120px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 15px;
 }
 .workoutReturn .flip-card {
   -webkit-transform: rotateY(180deg);

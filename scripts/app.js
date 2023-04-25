@@ -55,30 +55,18 @@ submitButton.addEventListener('click', function(event){
       }
 
     function printWorkout(){
-
-
-        // Create a new array to store unique workouts
-  // const uniqueWorkouts = [];
-
-  //       // Loop through userWorkout array and add unique workouts to the uniqueWorkouts array
-  //       for (let i = 0; i < userWorkout.length; i++) {
-  //         const workout = userWorkout[i];
-  //         if (!uniqueWorkouts.some((w) => w.name === workout.name)) {
-  //           uniqueWorkouts.push(workout);
-  //         }
-  //       }
- 
-         for (let i = 0; i < numWorkoutValue; i++) {
-                const individualWorkout = userWorkout[i];
-                //console.log(individualWorkout);
-                const newListItem = document.createElement('li');
-                newListItem.classList.add('workoutCard');
-                newListItem.innerHTML = `
-                <h2>${individualWorkout.name}</h2>
-                <div class="workout-img" style="background-image: url(${individualWorkout.image})">
-                
-                </div>`;
-                workoutUl.appendChild(newListItem);
+        for (let i = 0; i < numWorkoutValue; i++) {
+          const individualWorkout = userWorkout[i];
+          const newListItem = document.createElement('li');
+          newListItem.classList.add('workoutCard');
+          newListItem.innerHTML = `
+          <h2>${individualWorkout.name}</h2>
+          <h4>At Home: ${individualWorkout.atHome}</h4>
+          <h4>Goals: ${individualWorkout.goals}
+          <h4>Weight: ${individualWorkout.weight}</h4>
+          <img src="../${individualWorkout.image}"/>
+          `;          
+          workoutUl.appendChild(newListItem);          
         }
     }
       
@@ -137,39 +125,38 @@ submitButton.addEventListener('click', function(event){
 
 
 
-workoutUl.addEventListener('click', function(event){
-console.log(event.target)
-  if (event.target.tagName === 'li') {
-// Toggle a CSS class to show or hide additional content
-event.target.classList.toggle('flip-card');
+// workoutUl.addEventListener('click', function(event){
+// console.log(event.target)
+//   if (event.target.tagName === 'li') {
+// // Toggle a CSS class to show or hide additional content
+// event.target.classList.toggle('flip-card');
 
-});
-const ulParent = document.querySelector('#workoutReturn');
-const originalContent = {};
+// }});
+// const ulParent = document.querySelector('#workoutReturn');
+// const originalContent = {};
 
-ulParent.addEventListener('click', function(event) {
-  if (event.target.tagName === 'LI') {
-    // Check if original content has been stored for this li element
-    console.log(event)
-    const liId = event.target.getAttribute('id');
-    if (!originalContent[liId]) {
-      originalContent[liId] = event.target.innerHTML;
-    }
+// ulParent.addEventListener('click', function(event) {
+//   if (event.target.tagName === 'LI') {
+//     // Check if original content has been stored for this li element
+//     const liId = event.target.getAttribute('id');
+//     if (!originalContent[liId]) {
+//       originalContent[liId] = event.target.innerHTML;
+//     }
 
-    // Toggle the flip-card class
-    event.target.classList.toggle('flip-card');
+//     // Toggle the flip-card class
+//     event.target.classList.toggle('flip-card');
 
-    // Check if flip-card class has been removed
-    if (!event.target.classList.contains('flip-card')) {
-      // Restore original content
-      event.target.innerHTML = originalContent[liId];
-    } else {
-      // Blank out the content
-      event.target.innerHTML = '';
-    }
-  }
-});
-
+//     // Check if flip-card class has been removed
+//     if (!event.target.classList.contains('flip-card')) {
+//       // Restore original content
+//       event.target.innerHTML = originalContent[liId];
+//     } else {
+//       // Blank out the content
+//       event.target.innerHTML = ``
+//       ;
+//     }
+//   }
+// });
 
 })
 

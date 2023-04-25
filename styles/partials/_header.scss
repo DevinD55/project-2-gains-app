@@ -3,15 +3,15 @@
 
 header {
     background-color: $bgColor;
-    height: 44vh;
+    height: 20vh;
     .wrapper {
-        padding: 10% 0 25% 0;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     h1{
         font-size: 3em;
+        padding-top: 30px;
     }
     span{
         color: $accent;
