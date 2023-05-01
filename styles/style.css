@@ -454,7 +454,6 @@ footer .wrapper a {
   -webkit-box-align: space-between;
       -ms-flex-align: space-between;
           align-items: space-between;
-  width: 80%;
   max-width: 30rem;
   height: 250px;
   border-radius: 5px;
@@ -471,14 +470,13 @@ footer .wrapper a {
 }
 .workoutReturn .workoutCard img {
   width: 50%;
-  height: 100%;
   padding: 1rem;
   border-radius: 5%;
   position: relative;
   left: 0;
 }
 .workoutReturn .workoutCard .workout-info {
-  width: 60%;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
