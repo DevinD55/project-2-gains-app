@@ -20,48 +20,63 @@
         </div>
     </header>
     <main>
-        <div class="appDescription copyWrapper">
-            <h3>The ultimate workout app designed specifically for time-strapped developers who want to stay fit and healthy despite their busy schedules. </h3>
-            <ul>
-                <li>Pick the muscle groups you want to workout.</li>
-                <li>Choose a number between 1-10 to multiply the number of workouts returned.</li>
-            </ul>
-        </div>
-        <div class="formContainer wrapper">
-            <form action="#" method="post" name="workoutForm">
-                <fieldset>
-                    <h2>Build your workout!</h2>
-                    <input type="checkbox" id="chestWorkouts" name="workouts">
-                    <label for="chestWorkouts" class="checkBox">Chest</label>
+        <section class="better">
+            <div class="better-container">
+                <h2>Develop yourself.</h2>
+            </div>
+        </section>
+        <section class="instructions">
+            <div class="appDescription wrapper">
+                <h4>The ultimate workout app designed specifically for time-strapped developers who want to stay fit and healthy despite their busy schedules. </h4>
+                <p>Use this app to generate a list of random workouts to target specific muscle groups you want to work. Created to provide quick ideas to break up your routine, and keep you motivated!</p>
+                <h3>Instructions:</h3>
+                <ul>
+                    <li><em>1.</em> Pick the muscle groups you want to workout.</li>
+                    <li><em>2.</em> Choose a number between 1-10 to multiply the number of workouts returned.</li>
+                    <li><em>3.</em> Complete your workout!</li>
+                </ul>
+            </div>
+        </section>
+        <section class="form">
+            <div class="formContainer wrapper">
+                <form action="#" method="post" name="workoutForm">
+                    <fieldset>
+                        <h3>Build your workout!</h3>
+                        <input type="checkbox" id="chestWorkouts" name="workouts">
+                        <label for="chestWorkouts" class="checkBox">Chest</label>
 
-                    <input type="checkbox" id="legWorkouts" name="workouts">
-                    <label for="legWorkouts" class="checkBox">Leg</label>
+                        <input type="checkbox" id="legWorkouts" name="workouts">
+                        <label for="legWorkouts" class="checkBox">Leg</label>
 
-                    <input type="checkbox" id="abWorkouts" name="workouts">
-                    <label for="abWorkouts" class="checkBox">Ab</label>
+                        <input type="checkbox" id="abWorkouts" name="workouts">
+                        <label for="abWorkouts" class="checkBox">Ab</label>
 
-                    <input type="checkbox" id="cardioWorkouts" name="workouts">
-                    <label for="cardioWorkouts" class="checkBox">Cardio</label>
-                </fieldset>
-                <fieldset>
-                    <input type="number" id="numOfWorkouts" name="numOfWorkouts" min="1" max="10"placeholder="Workout Multipler"  required>
-                    <label for="numOfWorkouts" class="sr-only">Workout Multipler</label>
-                </fieldset>
-                <button type="submit" id="btn">Get Workouts</button>
-            </form>
-        </div>
-        <div class="wrapper">
-            <ul class="workoutReturn" id="workoutReturn">
-                
-            </ul>
+                        <input type="checkbox" id="cardioWorkouts" name="workouts">
+                        <label for="cardioWorkouts" class="checkBox">Cardio</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="number" id="numOfWorkouts" name="numOfWorkouts" min="1" max="10"placeholder="Workout Multipler"  required>
+                        <label for="numOfWorkouts" class="sr-only">Workout Multipler</label>
+                    </fieldset>
+                    <button type="submit" id="btn">Get Workouts</button>
+                </form>
+            </div>
+        </section>
+        <section class="return">
+            <div class="wrapper">
+                <ul class="workoutReturn" id="workoutReturn">
+                    
+                </ul>
         
-        </div>
+            </div>
+        </section>
+        
 
 
     </main>
     <footer>
         <div class="wrapper">
-            <h3>Copyright <a target="_none" href="https://github.com/meerocodes">Amir</a> & <a target="_none" href="https://github.com/DevinD55">Devin</a> 2023</h3>
+            <p>Copyright <a target="_none" href="https://github.com/meerocodes">Amir</a> & <a target="_none" href="https://github.com/DevinD55">Devin</a> 2023</p>
         </div>
     </footer>
 

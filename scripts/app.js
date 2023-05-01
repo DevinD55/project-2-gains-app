@@ -60,11 +60,13 @@ submitButton.addEventListener('click', function(event){
           const newListItem = document.createElement('li');
           newListItem.classList.add('workoutCard');
           newListItem.innerHTML = `
-          <h2>${individualWorkout.name}</h2>
-          <h4>At Home: ${individualWorkout.atHome}</h4>
-          <h4>Goals: ${individualWorkout.goals}
-          <h4>Weight: ${individualWorkout.weight}</h4>
           <img src="../${individualWorkout.image}"/>
+          <div class="workout-info">
+            <h5>${individualWorkout.name}</h5>
+            <h6>At Home: ${individualWorkout.atHome}</h6>
+            <h6>Goals: ${individualWorkout.goals}</h6>
+            <h6>Weight: ${individualWorkout.weight}</h6>
+          </div>
           `;          
           workoutUl.appendChild(newListItem);          
         }

@@ -3,8 +3,8 @@
 
 footer{
     height: 5vh;
-    background-color: $secondaryBgColor;
-    color: $baseFontColor;
+    background-color: $rich-black;
+    color: white;
     font-family: $baseFont;
     font-size: .8rem;
     position: fixed;
@@ -16,8 +16,8 @@ footer{
         display: flex;
         justify-content: center ;
         align-items: center;
-        h3 a{
-            color: $baseFontColor;
+        a{
+            color: white;
         }
     }
 

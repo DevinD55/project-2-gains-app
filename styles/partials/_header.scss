@@ -2,19 +2,18 @@
 @use "./typography";
 
 header {
-    background-color: $bgColor;
-    height: 20vh;
+    background-color: $rich-black;
+    height: 7vh;
+    position: fixed;
+    width: 100%;
     .wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    h1{
-        font-size: 3em;
-        padding-top: 30px;
+        height: 100%;
     }
     span{
-        color: $accent;
+        color: $brand-orange;
         font-family: $secondaryFont;
         font-size: .5em;
     }
